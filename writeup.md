@@ -14,15 +14,11 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[image1]: ./examples/car_not_car.png
-[image2]: ./examples/HOG_example.jpg
-[image3]: ./examples/sliding_windows.jpg
-[image4]: ./examples/sliding_window.jpg
-[image5]: ./examples/bboxes_and_heat.png
-[image6]: ./examples/labels_map.png
-[image7]: ./examples/output_bboxes.png
-[video1]: ./project_video.mp4
-
+[test1]: ./test_images/test1.jpg
+[test1_out]: ./output_images/test1.jpg
+[test1_hog_0]: ./output_images/test1_hog_channel_0.jpg
+[test1_hog_1]: ./output_images/test1_hog_channel_1.jpg
+[test1_hog_2]: ./output_images/test1_hog_channel_2.jpg
 
 ### Histogram of Oriented Gradients (HOG)
 
@@ -35,6 +31,14 @@ The goals / steps of this project are the following:
 | `orient`           | Number of orientation bins                      | **12**    | 
 | `pix_per_cell`     | Number of pixels per cell                       | **8**     |
 | `cell_per_block`   | Number of cells per block                       | **2**     |
+
+3. Here is the original image with the car detected in it.
+
+|**test1.jpg**       | **test1_out.jpg**          |
+|--------------------|----------------------------|
+|![test1.jpg][test1] | [test1_out.jpg][test1_out] |
+
+
 
 
 ![alt text][image1]
