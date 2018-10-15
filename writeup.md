@@ -38,17 +38,11 @@ The goals / steps of this project are the following:
 |--------------------|----------------------------|
 |![test1.jpg][test1] | [test1_out.jpg][test1_out] |
 
+4. These image visualize the hog features in the H,S and V channels of the image
 
-
-
-![alt text][image1]
-
-I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
-
-Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
-
-
-![alt text][image2]
+|**test1_hog_channel_0.jpg** | **test1_hog_channel_1.jpg** | **test1_hog_channel_2.jpg** |
+|----------------------------|-----------------------------|-----------------------------|
+|![test1_hog_channel_0.jpg][test1_hog_0] |![test1_hog_channel_1.jpg][test1_hog_1] | ![test1_hog_channel_2.jpg][test1_hog_2] |
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
