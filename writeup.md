@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 [test1]: ./test_images/test1.jpg
-[test1_out]: ./output_images/test1.jpg
+[test1_out]: ./output_images/test1_out.jpg
 [test1_hog_0]: ./output_images/test1_hog_channel_0.jpg
 [test1_hog_1]: ./output_images/test1_hog_channel_1.jpg
 [test1_hog_2]: ./output_images/test1_hog_channel_2.jpg
@@ -36,7 +36,7 @@ The goals / steps of this project are the following:
 
 |**test1.jpg**       | **test1_out.jpg**          |
 |--------------------|----------------------------|
-|![test1.jpg][test1] | [test1_out.jpg][test1_out] |
+|![test1.jpg][test1] | ![test1_out.jpg][test1_out] |
 
 4. These image visualize the hog features in the H,S and V channels of the image
 
