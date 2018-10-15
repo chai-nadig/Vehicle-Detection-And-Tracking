@@ -1,4 +1,4 @@
-## Vehicel Detection and Tracking
+# Vehicel Detection and Tracking
 
 ---
 
@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [test1_hog_1]: ./output_images/test1_hog_channel_1.jpg
 [test1_hog_2]: ./output_images/test1_hog_channel_2.jpg
 
-#### 1. Histogram of Oriented Gradients (HOG)
+## 1. Histogram of Oriented Gradients (HOG)
 
 1. The code for this step is contained in the third code cell under the `get_hog_features` function. 
 2. These are the hyperparameters I worked with for the final pipeline that was executed on the videos.
@@ -44,14 +44,14 @@ The goals / steps of this project are the following:
 |----------------------------|-----------------------------|-----------------------------|
 |![test1_hog_channel_0.jpg][test1_hog_0] |![test1_hog_channel_1.jpg][test1_hog_1] | ![test1_hog_channel_2.jpg][test1_hog_2] |
 
-#### 2. HOG parameters.
+## 2. HOG parameters.
 
 * HSV color space gave the best gradients. It performed better than other color space in frames with varied lighting conditions.
 * 12 orientations were picked to enrich the features.
 * 8 pixels per cell was chosen to achieve detection of gradients at a granular level.
 * 2 cells per block allowed scanned the image thorougly.
 
-#### 3. SVM Classifier
+## 3. SVM Classifier
 
 1. The code for the SVM Classifier is in the 11th code cell.
 2. The feature used to train the SVM is a long concatenated feature consisting of Spatial, Color and HOG features.
@@ -59,25 +59,25 @@ The goals / steps of this project are the following:
 4. A `StandardScaler` is used to normalize the pixel values. The scaler is fit to the traning data and is used to transform both, the traning and testing data.
 5. I achived a test accuracy of 99.13%
 
-#### 4. Sliding Window Search
+## 4. Sliding Window Search
 
 1. Code cell 13 has the code that does the sliding window search
 2. I decided to go with a scale of 1.5 because anything lesser would give too many boxes to search. Anything more would create boxes that are large and would miss smaller cars.
 3. I decided to go with an overlap of 75% to cover as much of the image as possible. I wanted to scan the image thorougly.
 
-#### 5. Images
+## 5. Images
 1. The images above depict the working of the pipeline.
 
-#### 6. SVC Optimization
+## 6. SVC Optimization
 1. No extra optimization was done for the SVC.
 2. I ensured that the features provided to the SVC are rich. 
 3. I also ensured that a randomized split of training and testing was used.
 
-#### 7. Video Implementation
+## 7. Video Implementation
 
-## 1. Here's a [link to my video result](./output_videos/project_video.mp4)
+#### 1. Here's a [link to my video result](./output_videos/project_video.mp4)
 
-## 2. Heat maps
+#### 2. Heat maps
 * Code cell 12 contains the code to generate heat maps to eliminate false positives and draw bounding boxes around the cars.
 * All bounding boxes detected by the classifer in each frame were recorded.
 * A heat map was created for all the pixels in each of these bounding boxes. 
@@ -86,9 +86,9 @@ The goals / steps of this project are the following:
 
 ---
 
-#### 8. Discussion
+## 8. Discussion
 
-## 1. Problems
+#### 1. Problems
 
 * The heatmaps now are not kept track between frames.
 * If I kept track of the heatmaps from one frame to another, I will be able to detect the car pixels better.
