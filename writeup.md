@@ -81,27 +81,15 @@ Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spat
 * All bounding boxes detected by the classifer in each frame were recorded.
 * A heat map was created for all the pixels in each of these bounding boxes. 
 * `scipy.ndimage.measurements.label()` is used to identify individual blobs in the heatmap.
-* Assuming each blob corresponded to a vehicle a bounding box to cover the area of each blob is drawn.  
-
-Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
-
-### Here are six frames and their corresponding heatmaps:
-
-![alt text][image5]
-
-### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
-![alt text][image6]
-
-### Here the resulting bounding boxes are drawn onto the last frame in the series:
-![alt text][image7]
-
-
+* Assuming each blob corresponded to a vehicle a bounding box to cover the area of each blob is drawn.
 
 ---
 
 ### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+#### 1. Problems
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
-
+* The heatmaps now are not kept track between frames.
+* If I kept track of the heatmaps from one frame to another, I will be able to detect the car pixels better.
+* Right now the bounding box for the cars sometimes don't fully cover the car.
+* Experiment with less than three channels. I've used three color channels when extracting color features. I would like to experiment with single or two color channels and see how it performs.
