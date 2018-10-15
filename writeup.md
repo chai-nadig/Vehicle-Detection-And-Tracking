@@ -61,11 +61,9 @@ The goals / steps of this project are the following:
 
 ### Sliding Window Search
 
-#### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
-
-I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
-
-![alt text][image3]
+1. Code cell 13 has the code that does the sliding window search
+2. I decided to go with a scale of 1.5 because anything lesser would give too many boxes to search. Anything more would create boxes that are large and would miss smaller cars.
+3. I decided to go with an overlap of 75% to cover as much of the image as possible. I wanted to scan the image thorougly.
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
@@ -76,13 +74,14 @@ Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spat
 
 ### Video Implementation
 
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./project_video.mp4)
+#### 1. Here's a [link to my video result](./output_videos/project_video.mp4)
 
-
-#### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
-
-I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
+#### 2. Heat maps
+* Code cell 12 contains the code to generate heat maps to eliminate false positives and draw bounding boxes around the cars.
+* All bounding boxes detected by the classifer in each frame were recorded.
+* A heat map was created for all the pixels in each of these bounding boxes. 
+* `scipy.ndimage.measurements.label()` is used to identify individual blobs in the heatmap.
+* Assuming each blob corresponded to a vehicle a bounding box to cover the area of each blob is drawn.  
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
