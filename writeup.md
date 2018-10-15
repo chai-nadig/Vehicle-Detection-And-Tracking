@@ -44,13 +44,20 @@ The goals / steps of this project are the following:
 |----------------------------|-----------------------------|-----------------------------|
 |![test1_hog_channel_0.jpg][test1_hog_0] |![test1_hog_channel_1.jpg][test1_hog_1] | ![test1_hog_channel_2.jpg][test1_hog_2] |
 
-#### 2. Explain how you settled on your final choice of HOG parameters.
+#### 2. HOG parameters.
 
-I tried various combinations of parameters and...
+* HSV color space gave the best gradients. It performed better than other color space in frames with varied lighting conditions.
+* 12 orientations were picked to enrich the features.
+* 8 pixels per cell was chosen to achieve detection of gradients at a granular level.
+* 2 cells per block allowed scanned the image thorougly.
 
-#### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
+#### 3. SVM Classifier
 
-I trained a linear SVM using...
+1. The code for the SVM Classifier is in the 11th code cell.
+2. The feature used to train the SVM is a long concatenated feature consisting of Spatial, Color and HOG features.
+3. The dataset is randomly split into training and testing sets.
+4. A `StandardScaler` is used to normalize the pixel values. The scaler is fit to the traning data and is used to transform both, the traning and testing data.
+5. I achived a test accuracy of 99.13%
 
 ### Sliding Window Search
 
